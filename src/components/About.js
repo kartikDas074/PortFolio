@@ -139,10 +139,13 @@ export default function About() {
             {/* Refined Bio Paragraph */}
             <div className="space-y-3 text-slate-300 text-sm leading-relaxed">
               <p>
-                I&apos;m <strong className="text-cyan-400">Kartik Das</strong>, a Computer Science & Engineering student at Gopalganj Science and Technology University (GSTU). I specialize in developing robust full-stack applications using the MERN ecosystem (MongoDB, Express.js, React, Node.js) with Next.js and TypeScript.
+                I&apos;m <strong className="text-cyan-400">Kartik Das</strong>, a Computer Science & Engineering student at Gopalganj Science and Technology University (GSTU). I am deeply passionate about <strong className="text-cyan-300">website building, complex problem solving, critical thinking, error fixing</strong>, and constantly <strong className="text-cyan-300">exploring new technologies</strong> to build elegant full-stack applications.
               </p>
               <p>
-                My technical expertise centers on backend system design, RESTful API architecture, optimized MongoDB schemas, and integrating cutting-edge LLM/AI APIs like Google Gemini API and Groq AI to build intelligent digital products.
+                My development stack is anchored around the MERN ecosystem (MongoDB, Express.js, React, Node.js) with Next.js and TypeScript. I specialize in backend system design, RESTful API architecture, optimized MongoDB schemas, and integrating cutting-edge LLM/AI APIs like Google Gemini API and Groq AI.
+              </p>
+              <p>
+                Outside of my coding setup, I love staying active and exploring new horizons. My favorite hobbies include <strong className="text-indigo-400">traveling</strong> to discover scenic places, playing strategic <strong className="text-indigo-400">card games</strong>, and playing <strong className="text-indigo-400">cricket</strong>.
               </p>
             </div>
 

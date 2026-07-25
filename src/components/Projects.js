@@ -1,80 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, CheckCircle2, Clock } from "lucide-react";
+import { ExternalLink, CheckCircle2, Clock, BookOpen } from "lucide-react";
 import { GithubIcon } from "@/components/Navbar";
+import { projects } from "@/constants/projectsData";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "BloodNet",
-      category: "Full Stack Blood Donation Platform",
-      status: "Completed",
-      image: "/BloodeDonation.png",
-      description:
-        "Comprehensive blood donation platform enabling real-time donor requests, blood group filtering, recipient matching, and secure authentication.",
-      tech: ["Next.js", "Tailwind CSS", "Express.js", "MongoDB", "Better Auth", "JWT"],
-      liveUrl: "https://blood-net-u4rt.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/Blood_Net",
-    },
-    {
-      title: "SportQ",
-      category: "Sports Facility Booking Platform",
-      status: "Completed",
-      image: "/SportQ.png",
-      description:
-        "Full-stack sports venue & court reservation platform with slot booking, facility management, and instant confirmation workflows.",
-      tech: ["React", "Tailwind CSS", "Express.js", "MongoDB", "Better Auth"],
-      liveUrl: "https://sport-q-green.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/SportQ",
-    },
-    {
-      title: "Luxe E-Commerce",
-      category: "Next-Gen E-Commerce Platform",
-      status: "Ongoing",
-      image: "/Luxe.png",
-      description:
-        "Modern digital storefront featuring dynamic product cataloging, cart state synchronization, secure user profiles, and responsive checkout UI.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "Better Auth", "MongoDB"],
-      liveUrl: "https://luxe-a-next-gen-ecommmerce-site.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/Luxe-A-NextGen_Ecommmerce_Site",
-    },
-    {
-      title: "FlavourMind AI",
-      category: "AI Restaurant Management & Chatbot",
-      status: "Ongoing",
-      image: "/FLavourMindAi.png",
-      description:
-        "Smart restaurant solution integrating Groq AI API for automated customer concierge, intelligent order recommendations, and management dashboard.",
-      tech: ["Next.js", "Tailwind CSS", "Express.js", "Groq AI", "MongoDB", "Better Auth"],
-      liveUrl: "https://flavour-mind-ai.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/FlavourMindAi",
-    },
-    {
-      title: "Online Learning Platform",
-      category: "Learning Management System",
-      status: "Completed",
-      image: "/OnlineLearning.png",
-      description:
-        "Interactive education hub allowing users to explore structured courses, monitor progress metrics, and access multimedia learning materials.",
-      tech: ["React", "Tailwind CSS", "Express.js", "MongoDB"],
-      liveUrl: "https://online-learning-plateform-j5u6.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/Online_Learning_Plateform",
-    },
-    {
-      title: "KeenKeeper",
-      category: "Productivity Task & Notes App",
-      status: "Completed",
-      image: "/KeenKeeper.png",
-      description:
-        "Lightweight productivity dashboard for managing daily tasks, custom notes, and priority lists with instant filtering.",
-      tech: ["HTML5", "Tailwind CSS", "JavaScript"],
-      liveUrl: "https://keen-kepper-dusky.vercel.app",
-      githubUrl: "https://github.com/kartikDas074/KeenKeeper",
-    },
-  ];
-
   return (
     <section id="projects" className="py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,25 +95,34 @@ export default function Projects() {
               </div>
 
               {/* Action Buttons Footer */}
-              <div className="p-6 pt-0 flex items-center gap-3">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 transition-all"
+              <div className="p-6 pt-0 flex flex-col gap-3">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-200 bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-850 hover:text-white transition-all shadow-sm"
                 >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Live Demo</span>
-                </a>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.title} GitHub Repository`}
-                  className="p-2.5 rounded-xl glass-card border border-slate-700/80 text-slate-300 hover:text-white hover:border-cyan-500/40 hover:bg-slate-800 transition-all"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                </a>
+                  <BookOpen className="w-4 h-4 text-cyan-400" />
+                  <span>View Details</span>
+                </Link>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 transition-all"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Live Demo</span>
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} GitHub Repository`}
+                    className="p-2.5 rounded-xl glass-card border border-slate-700/80 text-slate-300 hover:text-white hover:border-cyan-500/40 hover:bg-slate-800 transition-all"
+                  >
+                    <GithubIcon className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
